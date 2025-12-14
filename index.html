@@ -561,6 +561,37 @@
   transition: 0.2s;
   border-color: var(--brand);
 }
+    /* Hexagon Skill Badge Style */
+.hex-skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.hex-skill {
+  width: 130px;
+  height: 130px;
+  background: #121832;
+  border: 3px solid #2e3b63;
+  clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--brand);
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.hex-skill:hover {
+  transform: scale(1.08);
+  border-color: var(--brand-2);
+  color: var(--brand-2);
+}
+
 
 
   </style>
@@ -713,62 +744,42 @@
         <a class="btn-small" href="smartinternz_certificate.pdf" target="_blank">View Certificate</a>
     </div>
 </div>
-
     </section>
-
     <section id="skills" class="reveal" data-reveal>
-        <div class="section-header">
-            <h2>Skills & Expertise</h2>
-            <span class="sub-heading">Technical Proficiencies</span>
-        </div>
-        <div class="skills-grid">
-            <div class="skills-card">
-                <h4><i class="fas fa-sitemap"></i> Core Skills</h4>
-                <div class="skill-pill-container">
-                    <div style="display:flex; gap:10px; margin-top:12px;">
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/datascience"></use></svg></div>
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/datarobot"></use></svg></div>
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/keras"></use></svg></div>
-</div>
+    <div class="section-header">
+        <h2>Skills & Expertise</h2>
+        <span class="sub-heading">Technical Proficiencies</span>
+    </div>
 
-                </div>
-            </div>
-            <div class="skills-card">
-                <h4><i class="fas fa-code"></i> Programming</h4>
-                <div class="skill-pill-container">
-                    <div style="display:flex; gap:10px; margin-top:12px;">
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/python"></use></svg></div>
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/pandas"></use></svg></div>
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/numpy"></use></svg></div>
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/mysql"></use></svg></div>
-</div>
+    <div class="hex-skill-grid">
 
-                </div>
-            </div>
-            <div class="skills-card">
-                <div style="display:flex; gap:10px; margin-top:12px;">
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/matplotlib"></use></svg></div>
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/plotly"></use></svg></div>
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/powerbi"></use></svg></div>
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/tableau"></use></svg></div>
-</div>
+        <!-- Core Skills -->
+        <div class="hex-skill">Data Science</div>
+        <div class="hex-skill">EDA</div>
+        <div class="hex-skill">Visualization</div>
+        <div class="hex-skill">Data<br>Preprocessing</div>
+        <div class="hex-skill">Data Analysis</div>
 
-                </div>
-            </div>
-            <div class="skills-card">
-                <h4><i class="fas fa-database"></i> Tools & Technologies</h4>
-                <div class="skill-pill-container">
-                   <div style="display:flex; gap:10px; margin-top:12px;">
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/microsoftexcel"></use></svg></div>
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/jupyter"></use></svg></div>
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/git"></use></svg></div>
-    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/cleanarchitecture"></use></svg></div>
-</div>
+        <!-- Programming -->
+        <div class="hex-skill">Python</div>
+        <div class="hex-skill">Pandas</div>
+        <div class="hex-skill">NumPy</div>
+        <div class="hex-skill">SQL</div>
 
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Visualization Tools -->
+        <div class="hex-skill">Matplotlib</div>
+        <div class="hex-skill">Plotly</div>
+        <div class="hex-skill">Power BI</div>
+        <div class="hex-skill">Tableau</div>
+
+        <!-- Tools -->
+        <div class="hex-skill">Excel</div>
+        <div class="hex-skill">Jupyter</div>
+        <div class="hex-skill">Git</div>
+        <div class="hex-skill">Cleaning</div>
+
+    </div>
+</section>
 
     <section id="certs" class="reveal" data-reveal>
       <div class="grid">
