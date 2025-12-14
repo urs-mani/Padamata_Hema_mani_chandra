@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/simple-icons@latest"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PHMC-Webpage</title>
@@ -537,6 +538,30 @@
     .section-header p {
         color: var(--brand-2); /* Ensure subheading color is visible on dark background */
     }
+    .skill-logo {
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  border-radius: 12px;
+  background: #0d1222;
+  border: 1px solid #203057;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-logo svg {
+  width: 22px;
+  height: 22px;
+  fill: white;
+}
+
+.skill-logo:hover {
+  transform: scale(1.15);
+  transition: 0.2s;
+  border-color: var(--brand);
+}
+
 
   </style>
 </head>
@@ -700,38 +725,46 @@
             <div class="skills-card">
                 <h4><i class="fas fa-sitemap"></i> Core Skills</h4>
                 <div class="skill-pill-container">
-                    <span class="skill-pill">Data Science</span>
-                    <span class="skill-pill">Data Analysis</span>
-                    <span class="skill-pill">Exploratory Data Analysis (EDA)</span>
-                    <span class="skill-pill">Data Visualization</span>
-                    <span class="skill-pill">Data Preprocessing</span>
+                    <div style="display:flex; gap:10px; margin-top:12px;">
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/datascience"></use></svg></div>
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/datarobot"></use></svg></div>
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/keras"></use></svg></div>
+</div>
+
                 </div>
             </div>
             <div class="skills-card">
                 <h4><i class="fas fa-code"></i> Programming</h4>
                 <div class="skill-pill-container">
-                    <span class="skill-pill">Python</span>
-                    <span class="skill-pill">Pandas</span>
-                    <span class="skill-pill">NumPy</span>
-                    <span class="skill-pill">SQL</span>
+                    <div style="display:flex; gap:10px; margin-top:12px;">
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/python"></use></svg></div>
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/pandas"></use></svg></div>
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/numpy"></use></svg></div>
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/mysql"></use></svg></div>
+</div>
+
                 </div>
             </div>
             <div class="skills-card">
-                <h4><i class="fas fa-chart-bar"></i> Visualization</h4>
-                <div class="skill-pill-container">
-                    <span class="skill-pill">Matplotlib</span>
-                    <span class="skill-pill">Plotly</span>
-                    <span class="skill-pill">Power BI</span>
-                    <span class="skill-pill">Tableau</span>
+                <div style="display:flex; gap:10px; margin-top:12px;">
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/matplotlib"></use></svg></div>
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/plotly"></use></svg></div>
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/powerbi"></use></svg></div>
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/tableau"></use></svg></div>
+</div>
+
                 </div>
             </div>
             <div class="skills-card">
                 <h4><i class="fas fa-database"></i> Tools & Technologies</h4>
                 <div class="skill-pill-container">
-                    <span class="skill-pill">Excel</span>
-                    <span class="skill-pill">Jupyter</span>
-                    <span class="skill-pill">Git</span>
-                    <span class="skill-pill">Data Cleaning</span>
+                   <div style="display:flex; gap:10px; margin-top:12px;">
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/microsoftexcel"></use></svg></div>
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/jupyter"></use></svg></div>
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/git"></use></svg></div>
+    <div class="skill-logo"><svg><use href="https://cdn.simpleicons.org/cleanarchitecture"></use></svg></div>
+</div>
+
                 </div>
             </div>
         </div>
@@ -950,6 +983,7 @@
   </script>
 </body>
 </html>
+
 
 
 
