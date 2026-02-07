@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="https://cdn.jsdelivr.net/npm/simple-icons@latest"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PHMC-Webpage</title>
+  <title>PHMC</title>
   <meta name="description" content="Portfolio of Padamata Hema Mani Chandra — Aspiring Data Analyst | Passionate about Data Science & AI" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
   <style>
     :root {
       --bg: #0b1020;
@@ -67,7 +68,7 @@
     /* Photo */
     .photo-wrap { position: relative; justify-self: center; width: min(350px, 80vw); aspect-ratio: 1/1; }
     @keyframes spin { to { transform: rotate(360deg); } }
-    .photo { position: relative; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 6px solid #1e2a53; box-shadow: 0 20px 60px #0008; background: #0f1530 center/cover no-repeat; }
+    .photo { position: relative; width: 100%; height: 100%; border-radius: 50%; overflow: hidden; border: 6px solid #1e2a53; box-shadow: 0 20px 60px #0008; background: #0f1530 url('https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=800&auto=format&fit=crop') center/cover no-repeat; }
     .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
     /* Sections */
@@ -169,7 +170,7 @@
     .reveal.show { opacity: 1; transform: none; }
 
 
-    /* --- NEW/MODIFIED STYLES FOR CONSISTENCY --- */
+    /* --- NEW/MODIFIED STYLES FOR CONSISTENCY (Reverting to Original Card Colors) --- */
 
     /* Section Header used in Education, Internships, Skills */
     .section-header { text-align: center; margin-bottom: 40px; }
@@ -228,8 +229,9 @@
     }
 
     .timeline-card {
-        background: #18203f;
-        border: 1px solid #3b4566;
+        /* Revert to original card gradient and border */
+        background: linear-gradient(180deg, #0f1631, #0e142d); 
+        border: 1px solid #202a52; 
         border-radius: 12px;
         padding: 20px;
         color: var(--text);
@@ -298,8 +300,9 @@
 
     /* Internship Card Styling */
     .internship-card {
-        background: #18203f;
-        border: 1px solid #3b4566;
+        /* Revert to original card gradient and border */
+        background: linear-gradient(180deg, #0f1631, #0e142d); 
+        border: 1px solid #202a52;
         border-radius: 18px;
         padding: 40px;
         position: relative;
@@ -423,7 +426,7 @@
         }
     }
     
-    /* Skills Grid Card Styling - NEW */
+    /* Skills Grid Card Styling - Updated with original colors */
     .skills-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -433,8 +436,9 @@
     }
 
     .skills-card {
-        background: #18203f; /* Darker background for consistency */
-        border: 1px solid #3b4566;
+        /* Revert to original card gradient and border */
+        background: linear-gradient(180deg, #0f1631, #0e142d); 
+        border: 1px solid #202a52;
         border-radius: 18px;
         padding: 25px;
         color: var(--text);
@@ -480,7 +484,7 @@
     .skills-card:nth-child(2) .skill-pill { background-color: #0d1222; border-color: #203057; color: #bcd0ff; }
     .skills-card:nth-child(3) .skill-pill { background-color: #0d1222; border-color: #203057; color: #bcd0ff; }
     .skills-card:nth-child(4) .skill-pill { background-color: #0d1222; border-color: #203057; color: #bcd0ff; }
-    
+
     /* Contact Section Styling for the New Look */
     .contact-grid {
         display: grid;
@@ -489,18 +493,20 @@
     }
 
     .contact-card {
-        background: #18203f; /* Very light background for contrast */
-        border: 1px solid #e0e6f0;
+        /* Revert to original card gradient and border */
+        background: linear-gradient(180deg, #0f1631, #0e142d);
+        border: 1px solid #202a52;
         border-radius: 18px;
         padding: 25px;
         text-align: left;
-        color: #ffffff; /* Dark text for readability on light background */
+        color: #ffffff;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .contact-card:hover {
         transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(25, 169, 216, 0.758);
+        /* Reverting to a standard dark card shadow */
+        box-shadow: 0 10px 30px #00000033;
     }
 
     .contact-card i {
@@ -538,98 +544,190 @@
     .section-header p {
         color: var(--brand-2); /* Ensure subheading color is visible on dark background */
     }
-   /* Hexagon Container Grid */
-.hex-skill-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 30px;
-}
 
-/* Base Hexagon Shape */
-.hex-skill {
-  width: 130px;
-  height: 130px;
-  position: relative;
-  background: linear-gradient(145deg, #111a33, #0d1222);
-  clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
+    /* Full screen loader */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #020617; /* dark background, need ante color marchuko */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 17px;
+  flex-direction: column;
+  z-index: 9999;
+  transition: opacity 0.6s ease;
+}
+
+#loader h1 {
+  color: #e5e7eb;
+  font-size: 2rem;
   font-weight: 700;
-  color: var(--brand);
-  letter-spacing: 0.5px;
-  text-align: center;
-  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Loading line */
+.loading-bar {
+  margin-top: 1rem;
+  width: 220px;
+  height: 4px;
+  border-radius: 999px;
   overflow: hidden;
-  border: 2px solid #283456;
-  transition: transform 0.35s ease-out, color 0.3s ease;
+  background: rgba(148, 163, 184, 0.3);
 }
 
-/* Glow hover effect */
-.hex-skill:hover {
-  transform: scale(1.08);
-  color: var(--brand-2);
+.loading-bar-inner {
+  width: 0;
+  height: 100%;
+  background: #38bdf8;
+  animation: loading-line 1.5s ease-in-out infinite;
 }
 
-/* Animated Border Line */
-.hex-skill::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 3px solid transparent;
-  border-radius: 8px;
-  clip-path: polygon(50% 0%, 92% 25%, 92% 75%, 50% 100%, 8% 75%, 8% 25%);
-  animation: borderMove 2s linear infinite paused;
-}
-
-/* Hover starts animation */
-.hex-skill:hover::before {
-  animation-play-state: running;
-}
-
-/* Animation gradient line */
-.hex-skill::before {
-  border-image: linear-gradient(
-    90deg,
-    #00eaff,
-    #7d5cff,
-    #00eaff
-  ) 1;
-}
-
-/* Border animation moves around */
-@keyframes borderMove {
+/* Line animation */
+@keyframes loading-line {
   0% {
-    border-image-source: linear-gradient(0deg, #00eaff, #7d5cff, #00eaff);
+    width: 0;
+    transform: translateX(0);
   }
-  33% {
-    border-image-source: linear-gradient(120deg, #00eaff, #7d5cff, #00eaff);
-  }
-  66% {
-    border-image-source: linear-gradient(240deg, #00eaff, #7d5cff, #00eaff);
+  50% {
+    width: 90%;
+    transform: translateX(0);
   }
   100% {
-    border-image-source: linear-gradient(360deg, #00eaff, #7d5cff, #00eaff);
+    width: 0;
+    transform: translateX(100%);
   }
 }
-.hex-skill img {
-  width: 55px;
-  height: 55px;
-  object-fit: contain;
-  opacity: 0.9;
-  transition: 0.3s ease;
+
+/* Page content hide first */
+#page-content {
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
-.hex-skill:hover img {
+
+/* Page loaded ayyaka show avvadaniki */
+body.loaded #page-content {
   opacity: 1;
-  transform: scale(1.08);
 }
+
+body.loaded #loader {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.skills-pyramid {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pyramid-row {
+  display: flex;
+  justify-content: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.skill-logo-item {
+  text-align: center;
+}
+
+.skill-logo-item i {
+  font-size: 48px;
+}
+
+.skill-logo-item p {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Mobile fallback */
+@media (max-width: 768px) {
+  .pyramid-row {
+    justify-content: center;
+  }
+}
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.cert-pro-card {
+  background: linear-gradient(180deg, #0f1631, #0e142d);
+  border: 1px solid #202a52;
+  border-radius: 18px;
+  padding: 18px;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cert-pro-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.cert-pro-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #22305a;
+}
+
+.cert-pro-card h3 {
+  margin: 14px 0 6px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.cert-pro-card p {
+  font-size: 14px;
+  color: #9aa3b2;
+  margin-bottom: 14px;
+}
+
+.cert-pro-card a {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #6ee7f9, #a78bfa);
+  color: #08101f;
+  text-decoration: none;
+}
+
+.cert-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #a78bfa;
+  color: #08101f;
+}
+
 
   </style>
 </head>
 <body>
+  <div id="loader">
+    <div class="loader-content">
+      <h1>PHMC</h1>
+      <div class="loading-bar">
+        <div class="loading-bar-inner"></div>
+      </div>
+    </div>
+  </div>
+
   <header class="nav">
     <div class="container nav-inner">
       <div class="brand">PHMC</div>
@@ -668,7 +766,7 @@
       <div class="photo-wrap" aria-label="Profile photo">
         <div class="ring" aria-hidden="true"></div>
         <figure class="photo">
-          <img src="mani-chandra.jpg" alt="Padamata Hema Mani Chandra" onerror="this.style.display='none'" />
+          <img src="assets/mani-chandra.jpg" alt="Padamata Hema Mani Chandra" onerror="this.style.display='none'" />
         </figure>
       </div>
     </section>
@@ -719,8 +817,10 @@
         
         <div class="internship-card">
             <span class="badge">Excellent</span>
-            <h3>Cyber Security Virtual Internship</h3>
+            <h3>Cyber Security Virtual Internship <i class="fas fa-shield-alt" style="color: var(--brand); font-size: 0.9em; margin-left: 10px;"></i></h3>
             <p class="date-company">Blackbuck Engineers & APSCHE | January – April 2025</p>
+
+            <hr style="border-color: #3b4566; margin: 30px 0; opacity: 0.5;">
 
             <div class="details-row">
                 <div class="details-box">
@@ -732,6 +832,8 @@
                     <strong>Excellent</strong>
                 </div>
             </div>
+
+            <hr style="border-color: #3b4566; margin: 30px 0; opacity: 0.5;">
 
             <div class="achievements-section">
                 <h4>Achievements:</h4>
@@ -748,149 +850,241 @@
                 <a class="btn-small" href="bb_offer_letter.pdf" target="_blank">Offer Letter</a>
             </div>
         </div>
-        <div class="internship-card">
-    <span class="badge">Completed</span>
-    <h3>Google Cloud Generative AI Virtual Internship</h3>
-    <p class="date-company">SmartInternz & APSCHE (with NASSCOM Future Skills Prime) | August – October 2025</p>
+        <div class="internship-card" style="margin-top: 30px;">
+            <span class="badge" style="background-color: #6ee7f9; color: #08101f;">Generative AI</span>
+            <h3>Google Cloud Generative AI Virtual Internship <i class="fas fa-brain" style="color: var(--brand); font-size: 0.9em; margin-left: 10px;"></i></h3>
+            <p class="date-company">SmartInternz & APSCHE (with NASSCOM Future Skills Prime) | August – October 2025</p>
 
-    <div class="details-row">
-        <div class="details-box">
-            <p>Duration</p>
-            <strong>2 Months</strong>
-        </div>
-        <div class="details-box">
-            <p>Platform</p>
-            <strong>Google Cloud</strong>
-        </div>
-    </div>
+            <hr style="border-color: #3b4566; margin: 30px 0; opacity: 0.5;">
 
-    <div class="achievements-section">
-        <h4>Achievements:</h4>
-        <ul class="achievements-list">
-            <li>Completed a 2-month internship focused on Generative AI concepts and cloud-based ML tools.</li>
-            <li>Gained hands-on experience with Google Cloud AI and ML services.</li>
-            <li>Collaborated on real-time projects applying Generative AI solutions.</li>
-        </ul>
-    </div>
-    
-    <div class="internship-links">
-        <a class="btn-small" href="smartinternz_certificate.pdf" target="_blank">View Certificate</a>
-    </div>
-</div>
+            <div class="details-row">
+                <div class="details-box">
+                    <p>Duration</p>
+                    <strong>2 Months</strong>
+                </div>
+                <div class="details-box">
+                    <p>Platform</p>
+                    <strong>Google Cloud</strong>
+                </div>
+            </div>
+
+            <hr style="border-color: #3b4566; margin: 30px 0; opacity: 0.5;">
+
+            <div class="achievements-section">
+                <h4>Achievements:</h4>
+                <ul class="achievements-list">
+                    <li>Completed a 2-month internship focused on Generative AI concepts and cloud-based ML tools.</li>
+                    <li>Gained hands-on experience with Google Cloud AI and ML services.</li>
+                    <li>Collaborated on real-time projects applying Generative AI solutions.</li>
+                </ul>
+            </div>
+            
+            <div class="internship-links">
+                <a class="btn-small" href="smartinternz_certificate.pdf" target="_blank">View Certificate</a>
+            </div>
+        </div>
+
     </section>
+
     <section id="skills" class="reveal" data-reveal>
-    <div class="section-header">
-        <h2>Skills & Expertise</h2>
-        <span class="sub-heading">Technical Proficiencies</span>
+  <div class="section-header">
+    <h2>Skills & Expertise</h2>
+    <span class="sub-heading">Technical Proficiencies</span>
+  </div>
+
+  <div class="skills-pyramid">
+
+    <!-- Row 1 : 1 -->
+    <div class="pyramid-row">
+      <div class="skill-logo-item">
+        <i class="devicon-python-plain colored"></i>
+        <p>Python</p>
+      </div>
     </div>
 
-    <div class="hex-skill-grid">
-
-        <!-- Core Skills -->
-      <div class="hex-skill"><img src="https://cdn.simpleicons.org/datascience" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/plotly" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/obsidian" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/googleanalytics" /></div>
-
-        <!-- Programming -->
-        <div class="hex-skill"><img src="https://cdn.simpleicons.org/python/6EE7F9" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/pandas/6EE7F9" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/numpy/6EE7F9" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/mysql/6EE7F9" /></div>
-
-
-        <!-- Visualization Tools -->
-        <div class="hex-skill"><img src="https://cdn.simpleicons.org/matplotlib/6EE7F9" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/plotly/6EE7F9" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/powerbi/6EE7F9" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/tableau/6EE7F9" /></div>
-
-
-        <!-- Tools -->
-       <div class="hex-skill"><img src="https://cdn.simpleicons.org/microsoftexcel/6EE7F9" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/jupyter/6EE7F9" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/git/6EE7F9" /></div>
-<div class="hex-skill"><img src="https://cdn.simpleicons.org/sonarcloud/6EE7F9" /></div>
-
-
+    <!-- Row 2 : 2 -->
+    <div class="pyramid-row">
+      <div class="skill-logo-item">
+        <i class="devicon-mysql-plain colored"></i>
+        <p>SQL</p>
+      </div>
+      <div class="skill-logo-item">
+        <i class="fas fa-chart-line" style="font-size:48px; color:#38bdf8;"></i>
+        <p>Data Analysis</p>
+      </div>
     </div>
+
+    <!-- Row 3 : 4 -->
+    <div class="pyramid-row">
+      <div class="skill-logo-item">
+        <i class="devicon-html5-plain colored"></i>
+        <p>HTML</p>
+      </div>
+      <div class="skill-logo-item">
+        <i class="devicon-css3-plain colored"></i>
+        <p>CSS</p>
+      </div>
+      <div class="skill-logo-item">
+        <i class="devicon-javascript-plain colored"></i>
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-logo-item">
+        <i class="devicon-figma-plain colored"></i>
+        <p>Figma</p>
+      </div>
+    </div>
+
+    <!-- Row 4 : 8 -->
+    <div class="pyramid-row">
+      <div class="skill-logo-item">
+        <i class="fas fa-chart-pie" style="color:#F2C811"></i>
+        <p>Power BI</p>
+      </div>
+      <div class="skill-logo-item">
+        <i class="fas fa-table" style="color:#E97627"></i>
+        <p>Tableau</p>
+      </div>
+      <div class="skill-logo-item">
+        <i class="fas fa-file-excel" style="color:#217346"></i>
+        <p>Excel</p>
+      </div>
+      <div class="skill-logo-item">
+        <i class="devicon-git-plain colored"></i>
+        <p>Git</p>
+      </div>
+      <div class="skill-logo-item">
+        <i class="fas fa-calculator" style="font-size:48px; color:#4f46e5;"></i>
+        <p>NumPy</p>
+      </div>
+      <div class="skill-logo-item">
+        <i class="devicon-matplotlib-plain colored"></i>
+        <p>Matplotlib</p>
+      </div>
+      <div class="skill-logo-item">
+        <i class="devicon-jupyter-plain colored"></i>
+        <p>Jupyter</p>
+      </div>
+      <div class="skill-logo-item">
+        <i class="fas fa-broom" style="color:#22c55e"></i>
+        <p>Data Cleaning</p>
+      </div>
+    </div>
+
+  </div>
 </section>
 
+
     <section id="certs" class="reveal" data-reveal>
-      <div class="grid">
-        <div class="col-12"><h2>Certifications</h2></div>
-        <div class="col-12 card">
-          <div class="cert-grid">
-            <div class="cert-card">
-              <img src="aquiringdata.jpg" class="cert-image" onclick="window.open('Padamata+Hema+Manichandra_145553315.pdf.pdf', '_blank')" alt="Acquiring Data Certificate">
-              <h3 class="cert-title">Acquiring Data</h3>
-              <p class="cert-description">Certificate in data acquisition techniques and methodologies.</p>
-              <a class="btn-small" href="Padamata+Hema+Manichandra_145553315.pdf.pdf" target="_blank">View Certificate</a>
-            </div>
-            <div class="cert-card">
-              
-              <img src="eda.png" class="cert-image" onclick="window.open('23na1a5456-EDA.pdf', '_blank')" alt="Exploratory Data Analysis Certificate">
-              <h3 class="cert-title">Exploratory Data Analysis (EDA)</h3>
-              <p class="cert-description">Certificate in exploratory data analysis techniques.</p>
-              <a class="btn-small" href="23na1a5456-EDA.pdf" target="_blank">View Certificate</a>
-            </div>
-            <div class="cert-card">
-              <img src="23na1a5456-Data-processing-and-visualisation-images-0.jpg" class="cert-image" onclick="window.open('23na1a5456-Data-processing-and-visualisation.pdf', '_blank')" alt="Data Visualization and Preprocessing Certificate">
-              <h3 class="cert-title">Data Visualization and Preprocessing</h3>
-              <p class="cert-description">Certificate in data visualization and preprocessing methods.</p>
-              <a class="btn-small" href="assets\23na1a5456-Data-processing-and-visualisation.pdf" target="_blank">View Certificate</a>
-            </div>
-            <div class="cert-card">
-              <img src="bb_merit.png" class="cert-image" onclick="window.open('bb_merit.png', '_blank')" alt="Blackbuck Engineers Virtual Internship Certificate">
-              <h3 class="cert-title">Cyber Security Internship</h3>
-              <p class="cert-description">Merit certificate for long-term virtual internship in Cyber Security from Blackbuck Engineers. </p>
-              <a class="btn-small" href="bb_merit_certificate.pdf" target="_blank">View Certificate</a>
-            </div>
-            <div class="cert-card">
-              <img src="dpa.png" class="cert-image" onclick="window.open('assets/dpa.png', '_blank')" alt="Data Privacy Analyst Certificate Programme">
-              <h3 class="cert-title">Data Privacy Analyst</h3>
-              <p class="cert-description">Certificate of completion for an online course by Reliance Foundation Skilling Academy.</p>
-              <a class="btn-small" href="assets/dpa.jpg" target="_blank">View Certificate</a>
-            </div>
-            <div class="cert-card">
-              <img src="mdm.png" class="cert-image" onclick="window.open('assets/mdm.png', '_blank')" alt="Mobile Device Management Certificate">
-              <h3 class="cert-title">Mobile Device Management</h3>
-              <p class="cert-description">Certificate of completion for an online course by Reliance Foundation Skilling Academy.</p>
-              <a class="btn-small" href="mdm.pdf" target="_blank">View Certificate</a>
-            </div>
-            <div class="cert-card">
-              <img src="ps.png" class="cert-image" onclick="window.open('assets/ps.png', '_blank')" alt="Professional Skills Certificate">
-              <h3 class="cert-title">Professional Skills</h3>
-              <p class="cert-description">Certificate of completion for a course in career and team skills by Reliance Foundation Skilling Academy.</p>
-              <a class="btn-small" href="ps.pdf" target="_blank">View Certificate</a>
-            </div>
-            <div class="cert-card">
-              <img src="python-rfs.png" class="cert-image" onclick="window.open('assets/python-rfs.png', '_blank')" alt="Python Programming Certificate">
-              <h3 class="cert-title">Python Programming</h3>
-              <p class="cert-description">Certificate of completion for an online course by Reliance Foundation Skilling Academy.</p>
-              <a class="btn-small" href="python-rfs.pdf" target="_blank">View Certificate</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <div class="section-header">
+    <h2>Certifications</h2>
+    <span class="sub-heading">Verified Skills & Achievements</span>
+  </div>
+
+  <div class="certs-grid">
+
+    <!-- Card 1 -->
+    <div class="cert-pro-card">
+      <span class="cert-badge">Data</span>
+      <img src="aquiringdata.jpg" alt="Acquiring Data Certificate">
+      <h3>Acquiring Data</h3>
+      <p>Certified in data acquisition techniques and real-world data sourcing methods.</p>
+      <a href="Padamata+Hema+Manichandra_145553315.pdf.pdf" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="cert-pro-card">
+      <span class="cert-badge">EDA</span>
+      <img src="eda.png" alt="EDA Certificate">
+      <h3>Exploratory Data Analysis</h3>
+      <p>Hands-on certification in data exploration, pattern detection, and insights.</p>
+      <a href="23na1a5456-EDA.pdf" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="cert-pro-card">
+      <span class="cert-badge">Visualization</span>
+      <img src="23na1a5456-Data-processing-and-visualisation-images-0.jpg" alt="Data Visualization">
+      <h3>Data Visualization & Preprocessing</h3>
+      <p>Certified in data cleaning, transformation, and visual storytelling.</p>
+      <a href="assets/23na1a5456-Data-processing-and-visualisation.pdf" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="cert-pro-card">
+      <span class="cert-badge">Cyber Security</span>
+      <img src="bb_merit.png" alt="Cyber Security Internship">
+      <h3>Cyber Security Internship</h3>
+      <p>Merit certificate for long-term virtual internship at Blackbuck Engineers.</p>
+      <a href="bb_merit_certificate.pdf" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="cert-pro-card">
+      <span class="cert-badge">Privacy</span>
+      <img src="assets/dpa.png" alt="Data Privacy Analyst">
+      <h3>Data Privacy Analyst</h3>
+      <p>Certified in data privacy laws, compliance, and governance principles.</p>
+      <a href="assets/dpa.jpg" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="cert-pro-card">
+      <span class="cert-badge">IT</span>
+      <img src="assets/mdm.png" alt="Mobile Device Management">
+      <h3>Mobile Device Management</h3>
+      <p>Certificate in enterprise device control and management strategies.</p>
+      <a href="mdm.pdf" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="cert-pro-card">
+      <span class="cert-badge">Soft Skills</span>
+      <img src="assets/ps.png" alt="Professional Skills">
+      <h3>Professional Skills</h3>
+      <p>Career readiness, communication, and teamwork certification.</p>
+      <a href="ps.pdf" target="_blank">View Certificate</a>
+    </div>
+
+    <!-- Card 8 -->
+    <div class="cert-pro-card">
+      <span class="cert-badge">Python</span>
+      <img src="assets/python-rfs.png" alt="Python Programming">
+      <h3>Python Programming</h3>
+      <p>Certified in Python fundamentals and real-world programming use cases.</p>
+      <a href="python-rfs.pdf" target="_blank">View Certificate</a>
+    </div>
+
+  </div>
+</section>
+
 
     <section id="projects" class="reveal" data-reveal>
       <div class="grid">
         <div class="col-12"><h2>Projects</h2></div>
         <div class="col-4 project-card">
           <h3 style="margin-top:0">Stock Prediction Project</h3>
-          <img src="stock_prediction.png" alt="Stock Prediction Project Preview" style="width:100%; border-radius:12px; margin-bottom:12px; border:1px solid #22305a;">
+          <img src="assets/stock_prediction.png" alt="Stock Prediction Project Preview" style="width:100%; border-radius:12px; margin-bottom:12px; border:1px solid #22305a;">
           <p class="muted">A machine learning project focused on predicting stock prices using time-series analysis and models like Long Short-Term Memory (LSTM) networks. The project involves data collection, feature engineering, and model evaluation to forecast future stock movements. Built using Python, Pandas, and TensorFlow/Keras.</p>
           <a class="btn" href="https://github.com/urs-mani/StockPredictionProject" target="_blank">View on GitHub</a>
         </div>
         <div class="col-4 project-card">
           <h3 style="margin-top:0">Movie Ratings Visualization</h3>
-          <img src="p1.png" alt="Movie Ratings Visualization Preview" style="width:100%; border-radius:12px; margin-bottom:12px; border:1px solid #22305a;">
+          <img src="assets/p1.png" alt="Movie Ratings Visualization Preview" style="width:100%; border-radius:12px; margin-bottom:12px; border:1px solid #22305a;">
           <p class="muted">Performed exploratory data analysis and visualizations on the TMDB 5000 movies dataset. Created insights into rating distribution, genre performance, and the relationship between ratings and revenue. Built using Python (Pandas, Matplotlib, Seaborn).</p>
           <a class="btn" href="https://github.com/urs-mani/Movie-Ratings-Visualization" target="_blank">View on GitHub</a>
         </div>
-       
+        <div class="col-4 project-card">
+          <h3 style="margin-top:0">Sales Trends Dashboard (Placeholder)</h3>
+          <img src="assets/sales_dashboard.png" alt="Sales Trends Dashboard Preview" style="width:100%; border-radius:12px; margin-bottom:12px; border:1px solid #22305a;">
+          <p class="muted">Developed an interactive sales dashboard using Power BI/Tableau to visualize key performance indicators, enabling stakeholders to track trends and make data-driven decisions. (Please update this description with project specifics).</p>
+          <a class="btn" href="https://github.com/urs-mani/sales-dashboard" target="_blank">View on GitHub</a>
+        </div>
+        <div class="col-4 project-card">
+          <h3 style="margin-top:0">E-commerce Segmentation (Placeholder)</h3>
+          <img src="assets/ecomm_segmentation.png" alt="E-commerce Segmentation Preview" style="width:100%; border-radius:12px; margin-bottom:12px; border:1px solid #22305a;">
+          <p class="muted">Utilized Python and machine learning libraries (Scikit-learn) to perform customer segmentation on an e-commerce dataset. This project involved clustering techniques to group customers based on their purchasing behavior. (Please update this description with project specifics).</p>
+          <a class="btn" href="https://github.com/urs-mani/ecomm-segmentation" target="_blank">View on GitHub</a>
+        </div>
       </div>
     </section>
 
@@ -962,6 +1156,12 @@
   </footer>
 
   <script>
+    window.addEventListener('load', function () {
+    // konchem delay pedtunnam line kanipinchadaniki
+    setTimeout(function () {
+      document.body.classList.add('loaded');
+    }, 800);
+  });
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1029,11 +1229,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
